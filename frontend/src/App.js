@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import Manifesto from "./components/Manifesto";
 import Showcase from "./components/Showcase";
+import Gallery from "./components/Gallery";
 import Waitlist from "./components/Waitlist";
 import Faq from "./components/Faq";
 import Connect from "./components/Connect";
@@ -35,6 +36,7 @@ export default function App() {
                 <Marquee />
                 <Manifesto />
                 <Showcase />
+                <Gallery />
                 <Waitlist />
                 <Faq />
                 <Connect />

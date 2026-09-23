@@ -18,17 +18,18 @@ Standalone official website for EXHILARATION — a hard techno / trance event se
 - Design system: Void black #08080A, acid lime #CCFF00, crimson #FF2B56; Syne display + Space Mono body; clipped-corner frames, noise overlay, scanlines. Guidelines: /app/design_guidelines.json
 
 ## Implemented
-- 2026-09-23: Standalone site built; real Skiddle data (brand page as ticket destination, RAGETRAIN event with direct ticket link, YOSHIKO × INFLICTION archive entry, real stats); EXHILARATION logo in header + hero; headline replaced with brand tagline; Connect section with working SoundCloud embed (live tracks) + Instagram/Skiddle links; lineup info on event cards; responsive fixes (375/768/1366 verified, no overflow).
+- 2026-09-23: Standalone site built; real Skiddle data; EXHILARATION logo; brand tagline headline; Connect section with SoundCloud embed + socials; responsive fixes.
+- 2026-09-23 (2): AUTO-SYNC live — backend scrapes Skiddle brand page JSON-LD on startup + every 6h, upserts into db.events, serves GET /api/events (upcoming only); events board is fully API-driven with real flyer art, prices and lineups; archive event removed. DROP ANNOUNCEMENTS live — Emergent managed Resend (EMERGENT_EMAIL_KEY, from_name EXHILARATION); new synced events trigger announcement emails to all notify-list subscribers (first seed does not email); guardrail gate on every send; test send to delivered@resend.dev accepted (202). RAVE GALLERY added ("The floor, framed", 7 curated images). Manifesto chapters 01/02 renamed to "Headline Line-ups" and "Warehouse Rooms". Admin force-sync: POST /api/admin/sync with X-Sync-Secret header (SYNC_SECRET in backend/.env).
 
 ## Notes
-- Events board is manually maintained (hardcoded from Skiddle) — not a live Skiddle feed.
+- Events auto-sync from https://www.skiddle.com/g/exhilaration-/ (JSON-LD scrape, 6h interval); genre is keyword-guessed from event name/description.
 - Ticket buttons link to real Skiddle pages (event + brand).
-- Waitlist emails stored in MongoDB; no confirmation email sent yet.
+- Waitlist emails stored in MongoDB; subscribers get automatic announcement emails when a new event syncs.
+- Gallery images are the REAL photos from @exhilaration.techno Instagram, downloaded and bundled in frontend/public/gallery/ (Instagram CDN links expire, so local copies are used). Refresh by re-running the Instagram pull.
 
 ## Backlog
-- P0: Auto-sync events from Skiddle brand page (scrape/API cron)
-- P1: Past events / gallery section with photography
-- P1: Email notifications via Resend when new dates drop
+- P1: Refresh gallery with newer Instagram posts over time
+- P1: Unsubscribe link for announcement emails
 - P2: Custom domain + deploy
 
 ## Test Credentials

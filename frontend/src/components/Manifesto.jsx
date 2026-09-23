@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
-import { Radar, MapPin, Ticket } from "lucide-react";
+import { Disc3, Warehouse, Ticket } from "lucide-react";
 
 const chapters = [
     {
         num: "01",
-        icon: Radar,
-        title: "Track the Underground",
-        copy: "Follow the artists shaping Liverpool's hard techno and trance floors. The moment a new date lands, it's on your radar — no algorithms, no noise, just the scene.",
+        icon: Disc3,
+        title: "Headline Line-ups",
+        copy: "From international headliners like Ragetrain to the North West's hardest local selectors — every bill is stacked, every set built for the floor.",
         img: "https://images.pexels.com/photos/16553609/pexels-photo-16553609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         alt: "DJ performing in near darkness",
-        testid: "chapter-track",
+        testid: "chapter-lineups",
     },
     {
         num: "02",
-        icon: MapPin,
-        title: "Venue Intelligence",
-        copy: "From cavernous warehouses to basement sweatboxes — every listing carries the venue, the door times and the lineup, mapped across the North West.",
+        icon: Warehouse,
+        title: "Warehouse Rooms",
+        copy: "From the O2 Academy to low-ceilinged sweatboxes across Liverpool — big systems, dark rooms, zero frills.",
         img: "https://images.unsplash.com/photo-1558620013-a08999547a36?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHxfHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBkYXJrJTIwd2FyZWhvdXNlJTIwcGFydHklMjBkaiUyMGRyb3AlMjBzb3VuZCUyMGxpZ2h0JTIwc3RhZ2V8ZW58MHx8fHwxNzkwMTg5ODU4fDA&ixlib=rb-4.1.0&q=85",
         alt: "Warehouse stage lit by strobes",
-        testid: "chapter-venue",
+        testid: "chapter-rooms",
     },
     {
         num: "03",

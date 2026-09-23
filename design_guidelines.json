@@ -42,16 +42,47 @@
   "image_urls": {
     "hero_bg": "https://images.unsplash.com/photo-1574155376612-bfa4ed8aabfd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwyfHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBkYXJrJTIwd2FyZWhvdXNlJTIwcGFydHklMjBkaiUyMGRyb3AlMjBzb3VuZCUyMGxpZ2h0JTIwc3RhZ2V8ZW58MHx8fHwxNzkwMTg5ODU4fDA&ixlib=rb-4.1.0&q=85",
     "feature_crowd": "https://images.pexels.com/photos/5610109/pexels-photo-5610109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "feature_lasers": "https://images.unsplash.com/photo-1599739291413-87017131da6a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaH40fHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBkYXJrJTIwd2FyZWhvdXNlJTIwcGFydHklMjBkaiUyMGRyb3AlMjBzb3VuZCUyMGxpZ2h0JTIwc3RhZ2V8ZW58MHx8fHwxNzkwMTg5ODU4fDA&ixlib=rb-4.1.0&q=85",
+    "feature_lasers": "https://images.unsplash.com/photo-1599739291413-87017131da6a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHw0fHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBkYXJrJTIwd2FyZWhvdXNlJTIwcGFydHklMjBkaiUyMGRyb3AlMjBzb3VuZCUyMGxpZ2h0JTIwc3RhZ2V8ZW58MHx8fHwxNzkwMTg5ODU4fDA&ixlib=rb-4.1.0&q=85",
     "feature_dj": "https://images.pexels.com/photos/16553609/pexels-photo-16553609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "warehouse_stage": "https://images.unsplash.com/photo-1558620013-a08999547a36?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHxfHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBkYXJrJTIwd2FyZWhvdXNlJTIwcGFydHklMjBkaiUyMGRyb3AlMjBzb3VuZCUyMGxpZ2h0JTIwc3RhZ2V8ZW58MHx8fHwxNzkwMTg5ODU4fDA&ixlib=rb-4.1.0&q=85"
   },
+  "gallery_images": [
+    {
+      "url": "https://images.pexels.com/photos/5610109/pexels-photo-5610109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Underground techno crowd dancing under red strobe lights and smoke"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1578736641330-3155e606cd40?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwzfHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBuaWdodHxlbnwwfHx8fDE3OTAxOTE5NjF8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Intense green laser grid cutting through warehouse techno party"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHxfHxESiUyMHBlcmZvcm1pbmclMjBoZWFkbGluZSUyMGFjdCUyMGNvbmNlcnQlMjBsaWdodHN8ZW58MHx8fHwxNzkwMTkxOTYxfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Headline DJ performing live set under crimson stage lights"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1541126274323-dbac58d14741?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwyfHxESiUyMHBlcmZvcm1pbmclMjBoZWFkbGluZSUyMGFjdCUyMGNvbmNlcnQlMjBsaWdodHN8ZW58MHx8fHwxNzkwMTkxOTYxfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Headline act hands controlling deck mixer during peak drop"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1510682657356-6ee07db8204b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBwYXJ0eSUyMHN0cm9iZSUyMGxhc2VyJTIwbGlnaHRzJTIwY3Jvd2R8ZW58MHx8fHwxNzkwMTkxOTYxfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Industrial warehouse rave crowd bathed in high-contrast strobe beams"
+    },
+    {
+      "url": "https://images.pexels.com/photos/2114365/pexels-photo-2114365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Kinetic laser light display over energized rave crowd"
+    },
+    {
+      "url": "https://images.pexels.com/photos/27676345/pexels-photo-27676345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Acid lime laser canopy sweeping across dark underground vault"
+    }
+  ],
   "component_structure": {
     "Header": "Fixed header with backdrop-blur, brand logo EXHILARATION, status dot (LIVE IN LIVERPOOL), nav links, and CTA 'LAUNCH APP' pointing to https://event-artist-tracker.preview.emergentagent.com/",
     "HeroSection": "Kinetic headline with masked staggered reveal, neon badge, live soundwave canvas, primary & secondary CTAs",
     "LiveMarquee": "Infinitely sliding editorial ribbon displaying live upcoming Liverpool techno acts & warehouse dates",
     "ManifestoChapters": "Numbered chapters (01. Track the Underground, 02. Venue Intelligence, 03. Direct Ticket Access) in high contrast bento grids",
     "AppShowcase": "Interactive live mockup of the tracker app with filter toggles (Hard Techno, Acid, Trance, Industrial) and event card previews",
+    "RaveGallery": "Gritty, high-octane photo wall showcase of past nights featuring techno rave crowd shots, headline DJ acts, laser grids, and warehouse strobes",
     "WaitlistCapture": "Cyberpunk styled newsletter/notify form with interactive feedback via Sonner toast",
     "FAQAccordion": "Shadcn accordion styled with dark industrial borders and neon hover states",
     "Footer": "Massive text EXHILARATION watermark, copyright, Liverpool UK location badge, and primary action link"

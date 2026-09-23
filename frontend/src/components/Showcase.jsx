@@ -1,35 +1,36 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, CalendarDays, MapPin } from "lucide-react";
-import { TICKETS_URL } from "../config";
+import axios from "axios";
+import { API, TICKETS_URL } from "../config";
 
-const genres = ["ALL", "HARD TECHNO", "TRANCE"];
-
-const events = [
-    {
-        artist: "RAGETRAIN",
-        title: "Exhilaration Presents: RAGETRAIN All Night Long",
-        venue: "O2 Academy Liverpool",
-        date: "SAT 03 OCT",
-        genre: "HARD TECHNO",
-        status: "upcoming",
-        lineup: "Ragetrain — all night long",
-        url: "https://www.skiddle.com/whats-on/Liverpool/O2-Academy-Liverpool/Exhilaration-Presents-RAGETRAIN-All-Night-Long/42464702/",
-    },
-    {
-        artist: "YOSHIKO × INFLICTION",
-        title: "Exhilaration × Dvoid Presents",
-        venue: "Liverpool",
-        date: "SEP 2026",
-        genre: "HARD TECHNO",
-        status: "past",
-        lineup: "Yoshiko · Infliction · more",
-        url: null,
-    },
-];
+const formatDate = (iso) => {
+    try {
+        return new Date(iso)
+            .toLocaleDateString("en-GB", { weekday: "short", day: "2-digit", month: "short" })
+            .toUpperCase();
+    } catch {
+        return "TBA";
+    }
+};
 
 export default function Showcase() {
+    const [events, setEvents] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [active, setActive] = useState("ALL");
+
+    useEffect(() => {
+        axios
+            .get(`${API}/events`)
+            .then((r) => setEvents(r.data.events || []))
+            .catch(() => setEvents([]))
+            .finally(() => setLoading(false));
+    }, []);
+
+    const genres = useMemo(
+        () => ["ALL", ...new Set(events.map((e) => e.genre).filter(Boolean))],
+        [events]
+    );
     const filtered = active === "ALL" ? events : events.filter((e) => e.genre === active);
 
     return (
@@ -44,14 +45,14 @@ export default function Showcase() {
                 >
                     <div>
                         <p className="text-xs tracking-[0.3em] uppercase text-[#CCFF00] mb-4" data-testid="events-eyebrow">
-                            Upcoming Events
+                            Upcoming Raves
                         </p>
                         <h2 className="font-display font-bold uppercase tracking-tight text-2xl sm:text-3xl lg:text-4xl max-w-xl" data-testid="events-heading">
                             Next up: Ragetrain, all night long.
                         </h2>
                     </div>
-                    <p className="text-xs text-[#8F909A] max-w-xs leading-relaxed">
-                        Live from the official Skiddle brand page — every listing routes straight to official tickets.
+                    <p className="text-xs text-[#8F909A] max-w-xs leading-relaxed" data-testid="events-sync-note">
+                        Synced automatically from the official Skiddle page — new dates appear here the moment they drop.
                     </p>
                 </motion.div>
 
@@ -92,69 +93,73 @@ export default function Showcase() {
                     </div>
 
                     <div className="divide-y divide-[#22222B]" data-testid="event-list">
+                        {loading && (
+                            <div className="px-5 py-10 text-center" data-testid="events-loading">
+                                <p className="text-xs tracking-[0.25em] uppercase text-[#8F909A] animate-pulse">
+                                    Tuning into Skiddle...
+                                </p>
+                            </div>
+                        )}
                         <AnimatePresence mode="popLayout">
-                            {filtered.map((e) => (
+                            {!loading && filtered.map((e) => (
                                 <motion.div
-                                    key={e.artist}
+                                    key={e.url}
                                     layout
                                     initial={{ opacity: 0, x: -24 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: 24 }}
                                     transition={{ duration: 0.35 }}
-                                    className={`group flex items-center justify-between gap-4 px-5 py-5 transition-colors duration-300 ${
-                                        e.status === "upcoming" ? "hover:bg-[#CCFF00]/[0.04]" : "opacity-50"
-                                    }`}
-                                    data-testid={`event-card-${e.artist.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                                    className="group flex items-center justify-between gap-4 px-5 py-5 hover:bg-[#CCFF00]/[0.04] transition-colors duration-300"
+                                    data-testid={`event-card-${e.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                                 >
                                     <div className="flex items-center gap-5 min-w-0">
-                                        <div className="hidden sm:flex flex-col items-center justify-center w-16 shrink-0 border border-[#22222B] py-2 text-center">
-                                            <CalendarDays size={12} className="text-[#CCFF00] mb-1" aria-hidden="true" />
-                                            <span className="text-[10px] tracking-widest text-[#F4F4F6]">{e.date}</span>
-                                        </div>
+                                        {e.image ? (
+                                            <img
+                                                src={e.image}
+                                                alt={`${e.name} flyer`}
+                                                loading="lazy"
+                                                className="hidden sm:block w-16 h-16 shrink-0 object-cover clip-corner-sm border border-[#22222B]"
+                                                data-testid="event-flyer"
+                                            />
+                                        ) : (
+                                            <div className="hidden sm:flex flex-col items-center justify-center w-16 h-16 shrink-0 border border-[#22222B] text-center">
+                                                <CalendarDays size={12} className="text-[#CCFF00]" aria-hidden="true" />
+                                            </div>
+                                        )}
                                         <div className="min-w-0">
-                                            <h3 className="font-display font-bold uppercase tracking-tight text-lg sm:text-xl truncate group-hover:text-[#CCFF00] transition-colors duration-300">
-                                                {e.artist}
+                                            <h3 className="font-display font-bold uppercase tracking-tight text-lg sm:text-xl group-hover:text-[#CCFF00] transition-colors duration-300">
+                                                {e.name}
                                             </h3>
-                                            <p className="text-xs text-[#8F909A] mt-1 truncate">{e.title}</p>
-                                            <p className="text-[10px] tracking-[0.2em] uppercase text-[#CCFF00]/70 mt-1.5">
-                                                Line-up — {e.lineup}
-                                            </p>
                                             <p className="text-xs text-[#8F909A] flex items-center gap-1.5 mt-1">
                                                 <MapPin size={11} aria-hidden="true" />
-                                                {e.venue}
-                                                <span className="sm:hidden">· {e.date}</span>
+                                                {e.venue} · {formatDate(e.startDate)}
+                                                {e.price && <span className="text-[#CCFF00]/80">· from £{e.price}</span>}
                                             </p>
+                                            {e.lineup && e.lineup.length > 0 && (
+                                                <p className="text-[10px] tracking-[0.2em] uppercase text-[#CCFF00]/70 mt-1.5">
+                                                    Line-up — {e.lineup.join(" · ")}
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-4 shrink-0">
-                                        {e.status === "upcoming" ? (
-                                            <>
-                                                <span className="hidden md:inline text-[10px] tracking-[0.2em] text-[#FF2B56] border border-[#FF2B56]/40 px-2.5 py-1">
-                                                    {e.genre}
-                                                </span>
-                                                <a
-                                                    href={e.url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    data-testid={`event-tickets-${e.artist.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                                                    className="flex items-center gap-1 text-[10px] tracking-[0.2em] uppercase text-[#F4F4F6] group-hover:text-[#CCFF00] transition-colors duration-300"
-                                                >
-                                                    Tickets
-                                                    <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-                                                </a>
-                                            </>
-                                        ) : (
-                                            <span
-                                                className="text-[10px] tracking-[0.2em] uppercase text-[#8F909A] border border-white/15 px-2.5 py-1"
-                                                data-testid={`event-past-${e.artist.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                                            >
-                                                Archive
-                                            </span>
-                                        )}
+                                        <span className="hidden md:inline text-[10px] tracking-[0.2em] text-[#FF2B56] border border-[#FF2B56]/40 px-2.5 py-1">
+                                            {e.genre}
+                                        </span>
+                                        <a
+                                            href={e.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            data-testid={`event-tickets-${e.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                                            className="flex items-center gap-1 text-[10px] tracking-[0.2em] uppercase text-[#F4F4F6] group-hover:text-[#CCFF00] transition-colors duration-300"
+                                        >
+                                            Tickets
+                                            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                                        </a>
                                     </div>
                                 </motion.div>
                             ))}
-                            {filtered.length === 0 && (
+                            {!loading && filtered.length === 0 && (
                                 <motion.div
                                     key="empty"
                                     initial={{ opacity: 0 }}
@@ -164,7 +169,7 @@ export default function Showcase() {
                                     data-testid="events-empty-state"
                                 >
                                     <p className="text-xs tracking-[0.25em] uppercase text-[#8F909A]">
-                                        No {active.toLowerCase()} dates announced yet —{" "}
+                                        No {active === "ALL" ? "" : `${active.toLowerCase()} `}dates announced yet —{" "}
                                         <a href="#notify" className="text-[#CCFF00] underline underline-offset-4" data-testid="events-empty-notify-link">
                                             get notified
                                         </a>
@@ -175,7 +180,7 @@ export default function Showcase() {
                     </div>
 
                     <div className="px-5 py-4 border-t border-[#22222B] bg-[#0C0C0F] flex items-center justify-between">
-                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#8F909A]">Source: Skiddle</span>
+                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#8F909A]">Source: Skiddle · auto-synced</span>
                         <a
                             href={TICKETS_URL}
                             target="_blank"
