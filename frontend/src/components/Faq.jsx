@@ -9,23 +9,23 @@ import {
 const faqs = [
     {
         q: "What is EXHILARATION?",
-        a: "A hard techno and trance event series based in Liverpool and the North West. Raw sound, heavy line-ups, no compromise — warehouse-grade production every single date.",
+        a: "EXHILARATION is a hard techno and trance event series based in Liverpool and the North West — raw sound, heavy line-ups and no compromise, with warehouse-grade production at every date.",
     },
     {
-        q: "Where do the listings come from?",
-        a: "Every date is listed through Skiddle — the UK's largest independent ticketing platform — so venues, times and lineups stay live and accurate.",
+        q: "Where do your event listings come from?",
+        a: "Every date is listed through Skiddle — the UK's largest independent ticketing platform — so venues, times and line-ups stay live and accurate.",
     },
     {
-        q: "Which cities do you play?",
-        a: "Liverpool is home turf. The series and its wider hard techno and trance circuit run across the North West — watch the events board for new rooms.",
+        q: "Which cities do you host events in?",
+        a: "Liverpool is our home turf. The series and its wider hard techno and trance circuit run across the North West — watch the events board for new rooms.",
     },
     {
         q: "How do I buy tickets?",
         a: "Every event routes you straight to the official Skiddle checkout. No resellers, no markups, no surprises at the door.",
     },
     {
-        q: "Are the events 18+?",
-        a: "Yes — strictly 18+ at every EXHILARATION event. Bring valid photo ID; there are no exceptions at the door.",
+        q: "Are your events 18+?",
+        a: "Yes — every EXHILARATION event is strictly 18+. Bring valid photo ID, as there are no exceptions at the door.",
     },
 ];
 
