@@ -1,23 +1,11 @@
 import { motion } from "framer-motion";
 
 const images = [
-    { url: "/gallery/ig5.jpg", alt: "DVOID × EXHILARATION — Hangar 34 closing night" },
-    { url: "/gallery/ig1.jpg", alt: "DVOID × EXHILARATION present Yoshiko, Infliction and more" },
-    { url: "/gallery/ig7.jpg", alt: "DVOID × EXHILARATION — the floor in full swing" },
-    { url: "/gallery/ig3.jpg", alt: "RAGETRAIN All Night Long — O2 Academy Liverpool" },
-    { url: "/gallery/ig6.jpg", alt: "The first edition of DVOID × EXHILARATION at Hangar 34" },
-    { url: "/gallery/ig2.jpg", alt: "EXHILARATION × KHAOTIC × DVOID present Lil Texas and Exproz" },
-    { url: "/gallery/ig4.jpg", alt: "RAGETRAIN All Night Long — final ticket warning" },
-];
-
-const spans = [
-    "md:col-span-2 md:row-span-2",
-    "",
-    "md:row-span-2",
-    "",
-    "md:col-span-2",
-    "",
-    "",
+    { url: "/gallery/ig5.jpg", alt: "On stage at Hangar 34 — DVOID × EXHILARATION closing set" },
+    { url: "/gallery/ig6.jpg", alt: "Hands in the air under the rig" },
+    { url: "/gallery/ig7.jpg", alt: "Behind the decks facing a packed floor" },
+    { url: "/gallery/ig9.jpg", alt: "Headline set in front of a festival crowd" },
+    { url: "/gallery/ig8.jpg", alt: "Tunnel session — EXHILARATION crew" },
 ];
 
 export default function Gallery() {
@@ -44,22 +32,22 @@ export default function Gallery() {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[220px] gap-4" data-testid="gallery-grid">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4" data-testid="gallery-grid">
                     {images.map((img, i) => (
                         <motion.figure
                             key={img.url}
                             initial={{ opacity: 0, y: 32 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-40px" }}
-                            transition={{ duration: 0.6, delay: (i % 4) * 0.08 }}
-                            className={`group relative overflow-hidden clip-corner border border-[#22222B] hover:border-[#CCFF00]/50 transition-colors duration-500 ${spans[i]}`}
+                            transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
+                            className="group relative overflow-hidden clip-corner border border-[#22222B] hover:border-[#CCFF00]/50 transition-colors duration-500 mb-4 break-inside-avoid"
                             data-testid={`gallery-item-${i}`}
                         >
                             <img
                                 src={img.url}
                                 alt={img.alt}
                                 loading="lazy"
-                                className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-transform duration-700"
+                                className="w-full h-auto contrast-110 group-hover:scale-[1.03] transition-transform duration-700"
                             />
                         </motion.figure>
                     ))}
