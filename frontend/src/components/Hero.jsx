@@ -103,7 +103,7 @@ export default function Hero() {
                 >
                     <img
                         src={LOGO_URL}
-                        alt="EXHILARATION — hard techno and trance event series"
+                        alt="EXHILARATION — hard techno and trance raves"
                         data-testid="hero-logo"
                         className="h-28 w-28 sm:h-36 sm:w-36 object-cover clip-corner border border-[#CCFF00]/40 shadow-[0_0_60px_rgba(204,255,0,0.15)]"
                     />
@@ -124,7 +124,7 @@ export default function Hero() {
                     className="mt-8 max-w-xl text-sm sm:text-base text-[#8F909A] leading-relaxed"
                     data-testid="hero-subcopy"
                 >
-                    EXHILARATION is Liverpool's hard techno and trance event series.
+                    EXHILARATION throws hard techno and trance raves across Liverpool.
                     Raw sound, heavy line-ups, no compromise — every date, every
                     warehouse, straight from the source.
                 </motion.p>

@@ -9,7 +9,7 @@ import {
 const faqs = [
     {
         q: "What is EXHILARATION?",
-        a: "EXHILARATION is a hard techno and trance event series based in Liverpool and the North West — raw sound, heavy line-ups and no compromise, with warehouse-grade production at every date.",
+        a: "EXHILARATION throws hard techno and trance raves across Liverpool and the North West — raw sound, heavy line-ups and no compromise, with warehouse-grade production at every date.",
     },
     {
         q: "Where do your event listings come from?",
@@ -17,7 +17,7 @@ const faqs = [
     },
     {
         q: "Which cities do you host events in?",
-        a: "Liverpool is our home turf. The series and its wider hard techno and trance circuit run across the North West — watch the events board for new rooms.",
+        a: "Liverpool is our home — every EXHILARATION rave happens here. As we grow across the North West, new cities will appear on the events board first.",
     },
     {
         q: "How do I buy tickets?",
