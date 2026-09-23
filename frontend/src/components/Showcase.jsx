@@ -51,9 +51,6 @@ export default function Showcase() {
                             Next up: Ragetrain, all night long.
                         </h2>
                     </div>
-                    <p className="text-xs text-[#8F909A] max-w-xs leading-relaxed" data-testid="events-sync-note">
-                        Synced automatically from the official Skiddle page — new dates appear here the moment they drop.
-                    </p>
                 </motion.div>
 
                 <motion.div
@@ -179,8 +176,7 @@ export default function Showcase() {
                         </AnimatePresence>
                     </div>
 
-                    <div className="px-5 py-4 border-t border-[#22222B] bg-[#0C0C0F] flex items-center justify-between">
-                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#8F909A]">Source: Skiddle · auto-synced</span>
+                    <div className="px-5 py-4 border-t border-[#22222B] bg-[#0C0C0F] flex items-center justify-end">
                         <a
                             href={TICKETS_URL}
                             target="_blank"

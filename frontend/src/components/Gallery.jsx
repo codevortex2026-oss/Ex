@@ -27,9 +27,6 @@ export default function Gallery() {
                             The floor, framed.
                         </h2>
                     </div>
-                    <p className="text-xs text-[#8F909A] max-w-xs leading-relaxed">
-                        Straight from our Instagram — real nights, real rooms, no stock photos.
-                    </p>
                 </motion.div>
 
                 <div className="columns-1 sm:columns-2 lg:columns-3 gap-4" data-testid="gallery-grid">
