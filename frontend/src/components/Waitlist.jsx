@@ -58,7 +58,7 @@ export default function Waitlist() {
                     <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                         <div>
                             <p className="text-xs tracking-[0.3em] uppercase text-[#CCFF00] mb-4" data-testid="waitlist-eyebrow">
-                                04 · Stay on Frequency
+                                Stay on Frequency
                             </p>
                             <h2 className="font-display font-bold uppercase tracking-tight text-2xl sm:text-3xl lg:text-4xl" data-testid="waitlist-heading">
                                 Lineup drops hit your inbox first.

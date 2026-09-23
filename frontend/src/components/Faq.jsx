@@ -41,7 +41,7 @@ export default function Faq() {
                     className="mb-12"
                 >
                     <p className="text-xs tracking-[0.3em] uppercase text-[#CCFF00] mb-4" data-testid="faq-eyebrow">
-                        05 · Signal Check
+                        Signal Check
                     </p>
                     <h2 className="font-display font-bold uppercase tracking-tight text-2xl sm:text-3xl lg:text-4xl" data-testid="faq-heading">
                         Questions from the floor.

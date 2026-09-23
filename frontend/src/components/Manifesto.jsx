@@ -70,9 +70,6 @@ export default function Manifesto() {
                                     className="w-full h-full object-cover grayscale-[0.5] contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-[transform,filter] duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#111115] to-transparent" />
-                                <span className="absolute top-4 left-4 font-display font-extrabold text-4xl text-stroke" aria-hidden="true">
-                                    {c.num}
-                                </span>
                             </div>
                             <div className="p-6 flex flex-col gap-3 grow">
                                 <c.icon size={20} className="text-[#CCFF00]" strokeWidth={2} aria-hidden="true" />

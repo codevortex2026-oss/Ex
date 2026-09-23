@@ -37,7 +37,7 @@ export default function Connect() {
                     transition={{ duration: 0.7 }}
                 >
                     <p className="text-xs tracking-[0.3em] uppercase text-[#CCFF00] mb-4" data-testid="connect-eyebrow">
-                        06 · Connect
+                        Connect
                     </p>
                     <h2 className="font-display font-bold uppercase tracking-tight text-2xl sm:text-3xl lg:text-4xl" data-testid="connect-heading">
                         Hear it before you queue for it.
