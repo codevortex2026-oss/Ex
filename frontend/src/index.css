@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --void: #08080a;
+    --surface: #111115;
+    --edge: #22222b;
+    --acid: #ccff00;
+    --blood: #ff2b56;
+    --bone: #f4f4f6;
+    --ash: #8f909a;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+body {
+    margin: 0;
+    background: var(--void);
+    color: var(--bone);
+    font-family: "Space Mono", monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+.font-display {
+    font-family: "Syne", sans-serif;
+}
+
+::selection {
+    background: var(--acid);
+    color: #08080a;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #08080a;
+}
+::-webkit-scrollbar-thumb {
+    background: #22222b;
+    border: 2px solid #08080a;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ccff00;
+}
+
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 42s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.clip-corner {
+    clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+}
+
+.clip-corner-sm {
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+
+.text-stroke {
+    -webkit-text-stroke: 1px rgba(244, 244, 246, 0.22);
+    color: transparent;
+}
+
+.acid-glow:hover {
+    box-shadow:
+        0 0 0 1px rgba(204, 255, 0, 0.6),
+        0 0 32px rgba(204, 255, 0, 0.18);
+}
+
+.scanlines::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0, 0, 0, 0.22) 4px
+    );
+}

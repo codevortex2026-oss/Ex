@@ -1,0 +1,73 @@
+{
+  "project_name": "EXHILARATION - Techno & Trance Event Artist Tracker Landing Page",
+  "app_url": "https://event-artist-tracker.preview.emergentagent.com/",
+  "art_direction": {
+    "theme": "Underground Hard Techno Rave Brutalism",
+    "vibe": "Industrial, High-Octane, Cinematic Warehouse Rave, Raw & Kinetic",
+    "theme_mode": "dark",
+    "forbidden_colors": ["#7351B7", "#1B93A4"]
+  },
+  "colors": {
+    "background": "#08080A",
+    "surface": "#111115",
+    "surface_border": "#22222B",
+    "primary_accent": "#CCFF00",
+    "secondary_accent": "#FF2B56",
+    "text_primary": "#F4F4F6",
+    "text_secondary": "#8F909A",
+    "subtle_glow": "rgba(204, 255, 0, 0.15)"
+  },
+  "typography": {
+    "heading_font": "Syne, sans-serif",
+    "body_font": "Space Mono, monospace",
+    "h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tighter leading-none",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight",
+    "h3": "text-xl sm:text-2xl font-semibold uppercase",
+    "body": "text-base text-gray-300 leading-relaxed font-mono",
+    "label": "text-xs font-mono uppercase tracking-[0.2em] text-lime-400"
+  },
+  "layout_and_spacing": {
+    "hero": "min-h-screen relative flex flex-col justify-between pt-24 pb-12 px-6 lg:px-12 bg-black text-white overflow-hidden",
+    "section_padding": "py-24 px-6 md:px-12 lg:px-20",
+    "grid": "grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12",
+    "container": "max-w-7xl mx-auto w-full"
+  },
+  "motion_and_interactions": {
+    "smooth_scroll": "Lenis smooth scroll integration",
+    "hero_reveal": "Framed masked line-by-line staggered text reveal using Framer Motion",
+    "ticker_marquee": "Slow editorial continuous scrolling ribbon for upcoming DJ acts & Liverpool venues",
+    "micro_interactions": "Scale button effects, inner neon glow borders on hover, dynamic cursor tracking on interactive elements",
+    "parallax_element": "Subtle parallax depth on venue & crowd background layers during scroll"
+  },
+  "image_urls": {
+    "hero_bg": "https://images.unsplash.com/photo-1574155376612-bfa4ed8aabfd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwyfHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBkYXJrJTIwd2FyZWhvdXNlJTIwcGFydHklMjBkaiUyMGRyb3AlMjBzb3VuZCUyMGxpZ2h0JTIwc3RhZ2V8ZW58MHx8fHwxNzkwMTg5ODU4fDA&ixlib=rb-4.1.0&q=85",
+    "feature_crowd": "https://images.pexels.com/photos/5610109/pexels-photo-5610109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "feature_lasers": "https://images.unsplash.com/photo-1599739291413-87017131da6a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaH40fHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBkYXJrJTIwd2FyZWhvdXNlJTIwcGFydHklMjBkaiUyMGRyb3AlMjBzb3VuZCUyMGxpZ2h0JTIwc3RhZ2V8ZW58MHx8fHwxNzkwMTg5ODU4fDA&ixlib=rb-4.1.0&q=85",
+    "feature_dj": "https://images.pexels.com/photos/16553609/pexels-photo-16553609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "warehouse_stage": "https://images.unsplash.com/photo-1558620013-a08999547a36?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHxfHx0ZWNobm8lMjByYXZlJTIwY3Jvd2QlMjBsYXNlcnMlMjBkYXJrJTIwd2FyZWhvdXNlJTIwcGFydHklMjBkaiUyMGRyb3AlMjBzb3VuZCUyMGxpZ2h0JTIwc3RhZ2V8ZW58MHx8fHwxNzkwMTg5ODU4fDA&ixlib=rb-4.1.0&q=85"
+  },
+  "component_structure": {
+    "Header": "Fixed header with backdrop-blur, brand logo EXHILARATION, status dot (LIVE IN LIVERPOOL), nav links, and CTA 'LAUNCH APP' pointing to https://event-artist-tracker.preview.emergentagent.com/",
+    "HeroSection": "Kinetic headline with masked staggered reveal, neon badge, live soundwave canvas, primary & secondary CTAs",
+    "LiveMarquee": "Infinitely sliding editorial ribbon displaying live upcoming Liverpool techno acts & warehouse dates",
+    "ManifestoChapters": "Numbered chapters (01. Track the Underground, 02. Venue Intelligence, 03. Direct Ticket Access) in high contrast bento grids",
+    "AppShowcase": "Interactive live mockup of the tracker app with filter toggles (Hard Techno, Acid, Trance, Industrial) and event card previews",
+    "WaitlistCapture": "Cyberpunk styled newsletter/notify form with interactive feedback via Sonner toast",
+    "FAQAccordion": "Shadcn accordion styled with dark industrial borders and neon hover states",
+    "Footer": "Massive text EXHILARATION watermark, copyright, Liverpool UK location badge, and primary action link"
+  },
+  "instructions_to_main_agent": [
+    "File extensions must be .js / .jsx (React JS project, not TypeScript).",
+    "Ensure all buttons, inputs, navigation items, and key statistics have unique `data-testid` attributes.",
+    "Main CTA buttons must link directly to the app URL: https://event-artist-tracker.preview.emergentagent.com/ with target='_blank' rel='noopener noreferrer'.",
+    "Include Google Fonts import for 'Syne' and 'Space Mono' in index.html or index.css.",
+    "Use framer-motion for masked text reveals and scroll triggered animations.",
+    "Use Sonner for toast feedback on waitlist form submission."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Avoid generic centered layouts and standard Vercel dark mode templates.",
+    "Never use generic AI emojis (🤖🧠💡) as section icons; use Lucide react icons or clean geometric symbols.",
+    "Ensure text contrast meets APCA / WCAG standards against dark backgrounds.",
+    "Set data-testid on every interactive element."
+  ]
+}
