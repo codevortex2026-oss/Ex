@@ -24,9 +24,10 @@ mongo_url = os.environ["MONGO_URL"]
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ["DB_NAME"]]
 
-EMAIL_BASE_URL = "https://integrations.emergentagent.com"
-EMAIL_KEY = os.environ["EMERGENT_EMAIL_KEY"]
 EMAIL_FROM_NAME = os.environ["EMAIL_FROM_NAME"]
+MAILGUN_KEY = os.environ["MAILGUN_API_KEY"]
+MAILGUN_DOMAIN = os.environ["MAILGUN_DOMAIN"]
+MAILGUN_FROM = os.environ["MAILGUN_FROM"]
 SITE_URL = os.environ.get("SITE_URL", "")
 SKIDDLE_BRAND_URL = os.environ["SKIDDLE_BRAND_URL"]
 SYNC_SECRET = os.environ["SYNC_SECRET"]
@@ -116,13 +117,18 @@ def _assert_safe_email(subject: str, html: str) -> None:
 
 async def send_email(*, to: str, subject: str, html: str) -> str | None:
     _assert_safe_email(subject, html)
-    payload = {"to": [to], "subject": subject, "html": html, "from_name": EMAIL_FROM_NAME}
+    form = [
+        ("from", (None, MAILGUN_FROM)),
+        ("to", (None, to)),
+        ("subject", (None, subject)),
+        ("html", (None, html)),
+    ]
     try:
         async with httpx.AsyncClient(timeout=30) as client:
             resp = await client.post(
-                f"{EMAIL_BASE_URL}/api/v1/email/send",
-                headers={"X-Email-Key": EMAIL_KEY},
-                json=payload,
+                f"https://api.mailgun.net/v3/{MAILGUN_DOMAIN}/messages",
+                auth=("api", MAILGUN_KEY),
+                files=form,
             )
         resp.raise_for_status()
         return resp.json().get("id")
